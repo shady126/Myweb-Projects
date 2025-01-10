@@ -1,0 +1,45 @@
+{% extends "generator/base.html" %}
+
+{% block content %}
+<div class="card shadow-lg p-4">
+    <h1 class="text-center mb-4">Password History</h1>
+    {% if passwords %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Password</th>
+                <th>Generated At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in passwords %}
+            <tr>
+                <td>{{ item.password }}</td>
+                <td>{{ item.created_at|date:"d M Y, H:i:s" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="btn btn-outline-primary mt-3 w-100" onclick="downloadHistory()">
+        <i class="fas fa-download"></i> Download History
+    </button>
+    {% else %}
+    <p class="text-center text-muted">No passwords generated yet.</p>
+    {% endif %}
+    <a href="/" class="btn btn-secondary mt-3 w-100">Back to Generator</a>
+</div>
+<script>
+    function downloadHistory() {
+        const rows = Array.from(document.querySelectorAll('tbody tr'));
+        const data = rows.map(row => {
+            const cols = row.querySelectorAll('td');
+            return `${cols[0].innerText} - ${cols[1].innerText}`;
+        });
+        const blob = new Blob([data.join('\n')], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'password_history.txt';
+        link.click();
+    }
+</script>
+{% endblock %}
