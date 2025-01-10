@@ -1,0 +1,191 @@
+
+.animate-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    color: #2E8B57;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../images/background.jpg');
+
+    /* Make the image cover the entire background */
+    background-size: cover;
+
+    /* Center the image */
+    background-position: center;
+
+    /* Ensure the image stays fixed during scrolling */
+    background-attachment: fixed;
+
+    /* Prevent tiling of the image */
+    background-repeat: no-repeat;
+
+    /* Optionally add a fallback color */
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #2E8B57;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7)
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #2E8B57;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: MediumSeaGreen;
+}
+
+.btn-outline-primary {
+    color: #2E8B57;
+    border-color: #2E8B57;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2E8B57;
+    color: #fff;
+}
+
+.badge {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.white-text {
+    color: white !important;
+}
+/* Styling the track */
+input[type="range"] {
+    -webkit-appearance: none; /* Removes default styling for WebKit browsers */
+    width: 100%; /* Full-width slider */
+    height: 6px;
+    background: #ddd; /* Default track color */
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+/* Styling the thumb (slider handle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Removes default styling for WebKit browsers */
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    background: #2E8B57; /* Thumb color */
+    border-radius: 50%; /* Circular thumb */
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #2E8B57;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Change track color on hover */
+input[type="range"]:hover {
+    background: #ccc;
+}
+
+/* Change thumb color on active */
+input[type="range"]::-webkit-slider-thumb:active {
+    background: MediumSeaGreen;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+    background: MediumSeaGreen;
+}
+
+
+/* Base styling for the button */
+.btn.gen-col {
+    background-color: #2E8B57; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* Optional: Remove border */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
+}
+
+/* Change background color on hover */
+.btn.gen-col:hover {
+    background-color: MediumSeaGreen; /* Darker shade for hover */
+    color: white; /* Ensure text color remains readable */
+    transform: scale(1.05); /* Optional: Slightly enlarge the button */
+}
+
+
+/* Hide the default checkbox */
+.custom-checkbox {
+    -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
+    -moz-appearance: none; /* Remove default appearance for Firefox */
+    appearance: none; /* Remove default appearance for modern browsers */
+    width: 20px; /* Set custom width */
+    height: 20px; /* Set custom height */
+    background-color: #ddd; /* Background color for the unchecked state */
+    border: 2px solid MediumSeaGreen; /* Border color */
+    border-radius: 4px; /* Optional: Make it slightly rounded */
+    cursor: pointer; /* Add a pointer cursor */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+/* Style the checked state */
+.custom-checkbox:checked {
+    background-color: #2E8B57; /* Background color when checked */
+    border-color: MediumSeaGreen; /* Border color when checked */
+}
+
+/* Add a checkmark for the checked state */
+.custom-checkbox:checked::before {
+    content: '✔'; /* Checkmark symbol */
+    display: block;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px; /* Align the checkmark vertically */
+}
+
+/* Optional: Add hover effects */
+.custom-checkbox:hover {
+    border-color: MediumSeaGreen;
+}
+
+/* Custom spinner color */
+.custom-spinner {
+    color: grey; 
+}
+
